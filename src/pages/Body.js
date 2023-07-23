@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { select, mouse, hsl } from "d3";
 import "../assets/CSS/style.css";
+import Img from "../assets/IMG/LibManSys.png";
+import Img2 from "../assets/IMG/data-recovery.png";
 
 const Body = () => {
   let width = "100%";
   let height = "100%";
 
   const [isLoading, setIsLoading] = useState(true);
+  const wrapperRef = useRef(null); // Ref for the wrapper element
 
   useEffect(() => {
     // Simulate a 5-second loading time
@@ -84,6 +87,43 @@ const Body = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const $wrapper = wrapperRef.current; // Access the wrapper element using the ref
+    if (!$wrapper) return; // Check if the wrapper element is available
+
+    const numCircles = 15; // Number of circles
+    const animationDuration = 4; // Animation duration in seconds
+
+    const createRandomCircle = () => {
+      const circle = document.createElement("div");
+      circle.classList.add("circle");
+      circle.style.backgroundColor = "#888";
+      circle.style.animation = `animate ${animationDuration}s ${getRandomNumber(
+        0,
+        animationDuration
+      )}s linear infinite`;
+
+      const wrapperWidth = $wrapper.clientWidth;
+      const wrapperHeight = $wrapper.clientHeight;
+      const left = getRandomNumber(0, wrapperWidth);
+      const top = getRandomNumber(0, wrapperHeight);
+
+      circle.style.left = `${left}px`;
+      circle.style.top = `${top}px`;
+
+      return circle;
+    };
+
+    for (let i = 0; i < numCircles; i++) {
+      const circle = createRandomCircle();
+      $wrapper.appendChild(circle);
+    }
+  }, [isLoading]); // Trigger the circle creation when isLoading changes
+
+  const getRandomNumber = (min, max) => {
+    return Math.random() * (max - min) + min;
+  };
+
   return (
     <>
       {isLoading ? (
@@ -93,19 +133,39 @@ const Body = () => {
           className={`main-ctn ${isLoading ? "" : "canSeeMainCtn"}`}
           id="main-ctn"
         >
-          <div className="panel" data-color="white">
+          <div className="panel wrapper" data-color="white" ref={wrapperRef}>
             <div id="svg-particles-mouse">
-              <p className="intro-text-title">
+              <span className="intro-text-title">
                 Hi! I'm Karan. <br />
-                <p className="intro-text-subtitle">
-                  {" "}
+                <span className="intro-text-subtitle">
                   A software developer and designer who loves to create products
-                  that make a difference.{" "}
-                </p>
-              </p>
+                  that make a difference.
+                </span>
+              </span>
             </div>
           </div>
-          <div className="panel" data-color="yellow"></div>
+          <div className="panel" data-color="new">
+            <div className="LibraryManagementSlideCtn">
+              <div className="LibraryManagementSlide">
+                <div className="LibraryManagementSlideContent">
+                  <div className="LibraryManagementSlideContentTitle">
+                    Library Management System
+                    <div className="LibraryManagementSlideContentTitleSub">
+                      A web application for managing library.
+                    </div>
+                  </div>
+                  <div className="LibraryManagementSlideDisplayPictureCtn">
+                    <img src={Img2} alt="Library Management System" className="LibraryManagementSlideDisplayPictureBg"/>
+                    <img
+                      src={Img}
+                      alt="Library Management System"
+                      className="LibraryManagementSlideDisplayPicture"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       )}
     </>

@@ -11,18 +11,18 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 function App() {
   return (
     <>
-    <BrowserRouter>
-    <Routes>
-      <Route element={<Home />} path="/Portfolio"/>
-      <Route element={<Home />} path="/home"/>
-      <Route element={<Home />} path="/"/>
-      <Route element={<Navbar />} path="/navbar"/>
-      <Route element={<LoadingPage />} path="/loadingpage"/>
-      <Route element={<Body />} path="/body"/>
-      <Route element={<Changebg />} path="/changebg"/>
-      <Route element={<BgAnimation />} path="/bganimation"/>
-    </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<Home />} path="/Portfolio" />
+          <Route element={<Home />} path="/home" />
+          <Route element={<Home />} path="/" />
+          <Route element={<Navbar />} path="/navbar" />
+          <Route element={<LoadingPage />} path="/loadingpage" />
+          <Route element={<Body />} path="/body" />
+          <Route element={<Changebg />} path="/changebg" />
+          <Route element={<BgAnimation />} path="/bganimation" />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

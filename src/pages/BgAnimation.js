@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "../assets/CSS/style.css";
-import { hsl } from "d3";
+// import { hsl } from "d3";
 
 const getRandomNumber = (min, max) => {
   return Math.random() * (max - min) + min;
@@ -9,13 +9,13 @@ const getRandomNumber = (min, max) => {
 const BgAnimation = () => {
   useEffect(() => {
     const $wrapper = document.querySelector(".wrapper");
-    const numCircles = 30; // Number of circles
+    const numCircles = 15; // Number of circles
     const animationDuration = 4; // Animation duration in seconds
 
     const createRandomCircle = () => {
       const circle = document.createElement("div");
       circle.classList.add("circle");
-      circle.style.backgroundColor = hsl(0, 0, 0.6);
+      circle.style.backgroundColor = "#888";
       circle.style.animation = `animate ${animationDuration}s ${getRandomNumber(0, animationDuration)}s linear infinite`;
 
       const wrapperWidth = $wrapper.clientWidth;
