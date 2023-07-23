@@ -34,7 +34,7 @@ const Body = () => {
         .attr("cx", m[0])
         .attr("cy", m[1])
         .attr("r", 1) // 1e-6
-        .style("stroke", hsl(0, 0, 0.33))
+        .style("stroke", hsl(0, 0, 0.6))
         .style("stroke-opacity", 1)
         .transition()
         .duration(1000)

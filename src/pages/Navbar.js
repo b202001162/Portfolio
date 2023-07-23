@@ -14,12 +14,12 @@ export default function Navbar () {
           <div className="menu-container">
             <ul>
               <li>
-                <a href="#" className="menu-text">
+                <a href="." className="menu-text">
                   ABOUT
                 </a>
               </li>
               <li>
-                <a href="#" className="menu-text">
+                <a href="." className="menu-text">
                   CONTACT ME
                 </a>
               </li>
