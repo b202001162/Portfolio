@@ -4,6 +4,7 @@ import Navbar from "./pages/Navbar";
 import LoadingPage from "./pages/LoadingContainer";
 import Body from "./pages/Body";
 import Home from "./pages/Home";
+import Changebg from "./pages/Changebg";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <Route element={<Navbar />} path="/navbar"/>
       <Route element={<LoadingPage />} path="/loadingpage"/>
       <Route element={<Body />} path="/body"/>
+      <Route element={<Changebg />} path="/changebg"/>
     </Routes>
     </BrowserRouter>
     </>

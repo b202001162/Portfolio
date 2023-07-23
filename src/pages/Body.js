@@ -52,6 +52,38 @@ const Body = () => {
       .on("ontouchstart" in document ? "touchmove" : "mousemove", particle);
   });
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const $window = window;
+      const $body = document.querySelector("body");
+      const $panels = document.querySelectorAll(".panel");
+      const scroll = $window.scrollY + $window.innerHeight / 3;
+
+      $panels.forEach((panel) => {
+        const panelTop = panel.getBoundingClientRect().top + $window.scrollY;
+        const panelBottom = panelTop + panel.offsetHeight;
+
+        if (panelTop <= scroll && panelBottom > scroll) {
+          // Remove all classes on body with color-
+          $body.classList.remove(
+            ...Array.from($body.classList).filter((cls) =>
+              cls.startsWith("color-")
+            )
+          );
+
+          // Add class of currently active div
+          $body.classList.add("color-" + panel.dataset.color);
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       {isLoading ? (
@@ -61,15 +93,19 @@ const Body = () => {
           className={`main-ctn ${isLoading ? "" : "canSeeMainCtn"}`}
           id="main-ctn"
         >
-          <div className="first-slide">
+          <div className="panel" data-color="white">
             <div id="svg-particles-mouse">
               <p className="intro-text-title">
-                Hi! I'm Karan. <br /> 
-                <p className="intro-text-subtitle"> A software developer and designer who loves to create products that make a difference. </p>
+                Hi! I'm Karan. <br />
+                <p className="intro-text-subtitle">
+                  {" "}
+                  A software developer and designer who loves to create products
+                  that make a difference.{" "}
+                </p>
               </p>
             </div>
           </div>
-          <div className="other-slides"></div>
+          <div className="panel" data-color="yellow"></div>
         </div>
       )}
     </>
