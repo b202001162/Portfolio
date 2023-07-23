@@ -5,6 +5,7 @@ import LoadingPage from "./pages/LoadingContainer";
 import Body from "./pages/Body";
 import Home from "./pages/Home";
 import Changebg from "./pages/Changebg";
+import BgAnimation from "./pages/BgAnimation";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
       <Route element={<LoadingPage />} path="/loadingpage"/>
       <Route element={<Body />} path="/body"/>
       <Route element={<Changebg />} path="/changebg"/>
+      <Route element={<BgAnimation />} path="/bganimation"/>
     </Routes>
     </BrowserRouter>
     </>
