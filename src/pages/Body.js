@@ -1,8 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
+import LibManSysSlideContent from "./LibManSysSlideContent";
+import FileManSysSlideContent from "./FileManSysSlideContent"; 
 import { select, mouse, hsl } from "d3";
 import "../assets/CSS/style.css";
-import Img from "../assets/IMG/LibManSys.png";
-import Img2 from "../assets/IMG/data-recovery.png";
+
+// import Img2 from "../assets/IMG/data-recovery.png";
 
 const Body = () => {
   let width = "100%";
@@ -144,27 +146,11 @@ const Body = () => {
               </span>
             </div>
           </div>
-          <div className="panel" data-color="new">
-            <div className="LibraryManagementSlideCtn">
-              <div className="LibraryManagementSlide">
-                <div className="LibraryManagementSlideContent">
-                  <div className="LibraryManagementSlideContentTitle">
-                    Library Management System
-                    <div className="LibraryManagementSlideContentTitleSub">
-                      A web application for managing library.
-                    </div>
-                  </div>
-                  <div className="LibraryManagementSlideDisplayPictureCtn">
-                    <img src={Img2} alt="Library Management System" className="LibraryManagementSlideDisplayPictureBg"/>
-                    <img
-                      src={Img}
-                      alt="Library Management System"
-                      className="LibraryManagementSlideDisplayPicture"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="panel" data-color="lib-man-sys">
+            <LibManSysSlideContent />
+          </div>
+          <div className="panel" data-color="file-man-sys">
+            <FileManSysSlideContent />
           </div>
         </div>
       )}
