@@ -40,7 +40,7 @@ const ChangeBg = () => {
         <div>
           <h1>Magic scrolling colours</h1>
           <p>Scroll to animate the background colour of the body as a full height panel becomes visible.</p>
-          <p>I have tried to comment the code, particularly the JavaScript, as much as possible. I hope it's clear to understand.</p>
+          <p>I have tried to comment the code, particularly the JavaScript, as much as possible. I hope it&apos;s clear to understand.</p>
           <p>If you have any questions, my twitter is <a href="https://twitter.com/daveredfern">@daveredfern</a>.</p>
         </div>
       </div>

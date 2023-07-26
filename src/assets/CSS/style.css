@@ -316,11 +316,12 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 3rem;
-  border-radius: 8px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.187);
-  transition: all 0.4s ease-in-out;
+  /* border-radius: 8px; */
+  /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.187); */
+  /* transition: all 0.4s ease-in-out; */
+  background-color: transparent;
 }
-
+/* 
 .LibraryManagementSlideContent {
   background-color: #a2d2ff;
 }
@@ -333,7 +334,7 @@ body {
 }
 .FileManagementSlideContent:hover {
   background-color: #fff0f3;
-}
+} */
 
 .LibraryManagementSlideContentTitle, .FileManagementSlideContentTitle {
   font-size: 1.5rem;

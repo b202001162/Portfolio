@@ -138,7 +138,7 @@ const Body = () => {
           <div className="panel wrapper" data-color="white" ref={wrapperRef}>
             <div id="svg-particles-mouse">
               <span className="intro-text-title">
-                Hi! I'm Karan. <br />
+                Hi! I&apos;m Karan. <br />
                 <span className="intro-text-subtitle">
                   A software developer and designer who loves to create products
                   that make a difference.
