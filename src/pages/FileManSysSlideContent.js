@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function FileManSysSlideContent() {
   return (
+    <>
     <div className="FileManagementSlideCtn">
       <div className=" FileManagementSlide">
         <div className=" FileManagementSlideContent">
@@ -35,5 +36,8 @@ export default function FileManSysSlideContent() {
         </div>
       </div>
     </div>
+    <div className="vertical-line-at-scroll-stop-at-FileManSys">
+    </div>
+    </>
   );
 }

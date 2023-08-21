@@ -158,8 +158,33 @@ a {
   justify-content: center;
   align-items: center;
 }
+.vertical-line-at-scroll-down-at-LibManSys {
+  position: absolute;
+  bottom: -100%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  width: 2px;
+  height: 100px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-.scroll-icon-svg {
+.vertical-line-at-scroll-stop-at-FileManSys {
+  position: absolute;
+  bottom: -195%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  width: 90vw;
+  height: 2px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scroll-icon-svg, .scroll-icon-svg-at-LibManSys {
   position: absolute;
 }
 
