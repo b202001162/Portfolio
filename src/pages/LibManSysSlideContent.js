@@ -34,6 +34,22 @@ export default function LibManSysSlideContent() {
             />
           </div>
         </div>
+        <div className="vertical-line-at-scroll-down">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#000000"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="scroll-icon-svg"
+          >
+            <path d="M7 20l5-5 5 5" />
+            <path d="M7 4l5 5 5-5" />
+          </svg>
+        </div>
       </div>
     </div>
   );
